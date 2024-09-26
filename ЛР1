@@ -1,0 +1,28 @@
+#1 // Выбрать тему, построить ER модель предметной области - 3-4 таблицы в 3НФ: 
+
+Table drivers {
+  DriverId integer [primary key]
+  LastName varchar
+  FirstName varchar
+  Patronymic varchar
+  Experience integer
+}
+
+Table Routes {
+  RouteId integer [primary key]
+  RouteName varchar
+  Distance integer 
+  DriverPayment integer 
+}
+
+Table Shipments {
+  ShipmentId integer [primary key]
+  RouteId integer
+  DriverId integer
+  DepartureDate timestamp
+  ArrivalDate timestamp
+  Bonus integer
+}
+
+Ref: Shipments.DriverId > drivers.DriverId // many-to-one
+Ref: Shipments.RouteId > Routes.RouteId 
