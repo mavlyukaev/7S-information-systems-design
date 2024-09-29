@@ -1,3 +1,5 @@
+
+
 class Driver:
     def __init__(self, driver_id: int, last_name: str, first_name: str, patronymic: str, experience: int):
         # Валидация полей при создании объекта
